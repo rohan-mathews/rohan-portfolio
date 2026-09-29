@@ -52,12 +52,13 @@ body {
 @keyframes expandUniverse {
     0% { transform: scale(1); box-shadow: 0 0 5px 2px rgba(255,255,255,0.8); background: white; }
     40% { transform: scale(1); box-shadow: 0 0 40px 10px rgba(168, 85, 247, 0.9); background: white; }
-    70% { transform: scale(200); box-shadow: 0 0 150px 100px rgba(255,255,255,1); background: white; }
-    100% { transform: scale(3000); box-shadow: 0 0 0px 0px rgba(255,255,255,1); background: white; }
+    70% { transform: scale(50); box-shadow: 0 0 100px 50px rgba(255,255,255,1); background: white; }
+    100% { transform: scale(150); box-shadow: 0 0 0px 0px rgba(255,255,255,1); background: transparent; opacity: 0; }
 }
 
-@keyframes fadeOutIntro {
-    to { opacity: 0; visibility: hidden; }
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); } /* Removed box-shadow to stop mobile lag */
 }
 
 /* =========================================

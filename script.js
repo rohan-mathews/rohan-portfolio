@@ -1,31 +1,35 @@
 // 1. Generate the Starfield
+// 1. Generate the Starfield (Optimized for Mobile)
 document.addEventListener("DOMContentLoaded", () => {
     const starfield = document.getElementById('starfield');
-    const starCount = 200; // Number of stars in the universe
+    
+    // Check if device is mobile based on screen width
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 50 : 200; // 50 stars on phone, 200 on PC
 
     for (let i = 0; i < starCount; i++) {
         let star = document.createElement('div');
         star.className = 'star';
         
-        // Randomize size between 1px and 3px
+        // Randomize size
         const size = Math.random() * 2 + 1;
         star.style.width = size + 'px';
         star.style.height = size + 'px';
         
-        // Randomize position across the entire scrollable height
+        // Randomize position
         star.style.left = Math.random() * 100 + 'vw';
         star.style.top = Math.random() * 300 + 'vh'; 
         
-        // Randomize twinkle animation speed and delay
+        // Randomize animation speed
         star.style.animationDuration = (Math.random() * 3 + 1.5) + 's';
         star.style.animationDelay = (Math.random() * 3) + 's';
         
-        // Occasionally make a star slightly purple or pink
+        // Color variation
         const colorChance = Math.random();
         if (colorChance > 0.9) {
-            star.style.background = '#d8b4fe'; // Light purple
+            star.style.background = '#d8b4fe'; 
         } else if (colorChance > 0.8) {
-            star.style.background = '#f9a8d4'; // Light pink
+            star.style.background = '#f9a8d4'; 
         }
 
         starfield.appendChild(star);
