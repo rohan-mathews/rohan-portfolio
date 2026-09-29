@@ -1,4 +1,3 @@
-// 1. Generate the Starfield
 // 1. Generate the Starfield (Optimized for Mobile)
 document.addEventListener("DOMContentLoaded", () => {
     const starfield = document.getElementById('starfield');
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// 2. Swiper Coverflow Initialization
+// 2. Swiper Coverflow Initialization (Crucial for the slideshow)
 var swiper = new Swiper('.swiper-container-looks', {
     effect: 'coverflow',
     grabCursor: true,
