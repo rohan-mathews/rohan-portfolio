@@ -1,0 +1,129 @@
+:root {
+    --space-dark: #020005;
+    --nebula-purple: #3b0764;
+    --nebula-pink: #831843;
+    --star-white: #e2e8f0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--space-dark);
+    color: var(--star-white);
+    overflow-x: hidden;
+    /* Nebula background gradients */
+    background-image: 
+        radial-gradient(circle at 15% 30%, rgba(59, 7, 100, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(131, 24, 67, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, var(--space-dark) 100%);
+}
+
+.dior-font {
+    font-family: 'Playfair Display', serif;
+}
+
+/* =========================================
+   THE BIG BANG / UNIVERSE FORMING ANIMATION
+   ========================================= */
+#universe-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOutIntro 0.8s ease-in-out forwards;
+    animation-delay: 3s; /* How long the intro lasts */
+    pointer-events: none;
+}
+
+.big-bang {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0);
+    animation: expandUniverse 2.8s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandUniverse {
+    0% { transform: scale(1); box-shadow: 0 0 5px 2px rgba(255,255,255,0.8); background: white; }
+    40% { transform: scale(1); box-shadow: 0 0 40px 10px rgba(168, 85, 247, 0.9); background: white; }
+    70% { transform: scale(200); box-shadow: 0 0 150px 100px rgba(255,255,255,1); background: white; }
+    100% { transform: scale(3000); box-shadow: 0 0 0px 0px rgba(255,255,255,1); background: white; }
+}
+
+@keyframes fadeOutIntro {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* =========================================
+   STARFIELD
+   ========================================= */
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.1; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); }
+}
+
+/* =========================================
+   COSMIC GLASS PANELS
+   ========================================= */
+.cosmic-panel {
+    background: rgba(10, 5, 20, 0.5);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8),
+                inset 0 0 20px rgba(168, 85, 247, 0.05);
+}
+
+.cosmic-glow {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+
+.glowing-text {
+    text-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+}
+
+/* Swiper Customization */
+.swiper-container-looks {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.9), 0 0 20px rgba(168, 85, 247, 0.2);
+}
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
