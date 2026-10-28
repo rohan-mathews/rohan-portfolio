@@ -8,7 +8,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts (Outfit for UI, Playfair Display for elegant headings) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- FontAwesome for Icons -->
@@ -20,9 +20,14 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased text-white fluid-intro bg-black">
+<body class="antialiased text-white bg-black">
 
-    <!-- iOS Liquid Mesh Background -->
+    <!-- The Big Bang Intro -->
+    <div id="universe-intro">
+        <div class="big-bang"></div>
+    </div>
+
+    <!-- Liquid Mesh Background -->
     <div class="liquid-bg">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
@@ -30,7 +35,7 @@
         <div class="orb orb-4"></div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER (With Scroll Animation IDs) -->
     <header id="navbar" class="fixed w-full top-0 z-50 border-b border-white/10 ios-glass rounded-none py-4 px-8 transition-all duration-500">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <h1 id="nav-name" class="editorial-font text-2xl md:text-3xl font-semibold tracking-wide transition-all duration-500 origin-left">
@@ -61,11 +66,9 @@
             </div>
 
             <div class="order-1 lg:order-2 relative h-[500px] w-full flex justify-center items-center">
-                <!-- Main Pic -->
                 <div class="absolute w-64 md:w-80 h-auto ios-glass p-3 z-20 transform -rotate-2 transition-all duration-700 hover:rotate-0 hover:scale-105">
                     <img src="images/main.jpeg" alt="Rohan Main" onerror="this.src='https://via.placeholder.com/400x500?text=main.jpeg'" class="rounded-2xl w-full h-full object-cover">
                 </div>
-                <!-- Goofy Pic -->
                 <div class="absolute w-44 md:w-56 h-auto ios-glass p-2 z-30 transform rotate-6 translate-x-28 translate-y-36 transition-all duration-700 hover:rotate-0 hover:scale-110">
                     <img src="images/goofy.jpeg" alt="Rohan Goofy" onerror="this.src='https://via.placeholder.com/300x400?text=goofy.jpeg'" class="rounded-2xl w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
                 </div>
@@ -119,7 +122,6 @@
         
         <div class="swiper swiper-container-looks">
             <div class="swiper-wrapper">
-                <!-- All 9 pics verified -->
                 <div class="swiper-slide ios-glass-slide"><img src="images/pic1.jpeg" onerror="this.src='https://via.placeholder.com/300x450?text=pic1.jpeg'" alt="Look 1"></div>
                 <div class="swiper-slide ios-glass-slide"><img src="images/pic2.jpeg" onerror="this.src='https://via.placeholder.com/300x450?text=pic2.jpeg'" alt="Look 2"></div>
                 <div class="swiper-slide ios-glass-slide"><img src="images/pic3.jpeg" onerror="this.src='https://via.placeholder.com/300x450?text=pic3.jpeg'" alt="Look 3"></div>

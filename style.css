@@ -13,18 +13,46 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* iOS Fluid Intro Animation */
-.fluid-intro {
-    animation: liquidFadeIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+/* =========================================
+   THE BIG BANG ANIMATION (Blue Vibe)
+   ========================================= */
+#universe-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOutIntro 0.8s ease-in-out forwards;
+    animation-delay: 2.5s;
+    pointer-events: none;
 }
 
-@keyframes liquidFadeIn {
-    0% { opacity: 0; filter: blur(20px); transform: scale(1.02); }
-    100% { opacity: 1; filter: blur(0px); transform: scale(1); }
+.big-bang {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    border-radius: 50%;
+    animation: expandUniverse 2.2s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandUniverse {
+    0% { transform: scale(1); box-shadow: 0 0 5px 2px rgba(255,255,255,0.8); background: white; }
+    40% { transform: scale(1); box-shadow: 0 0 25px 10px rgba(10, 132, 255, 0.9); background: white; } 
+    70% { transform: scale(50); background: white; box-shadow: none; }
+    100% { transform: scale(2000); background: white; box-shadow: none; opacity: 0; }
+}
+
+@keyframes fadeOutIntro {
+    to { opacity: 0; visibility: hidden; }
 }
 
 /* =========================================
-   LIQUID MESH BACKGROUND (Optimized for Mobile GPU)
+   LIQUID MESH BACKGROUND
    ========================================= */
 .liquid-bg {
     position: fixed;
@@ -46,7 +74,6 @@ body {
     will-change: transform;
 }
 
-/* iOS Colors: Cyan, Indigo, Magenta */
 .orb-1 { width: 50vw; height: 50vw; background: #0a84ff; top: -10%; left: -10%; }
 .orb-2 { width: 60vw; height: 60vw; background: #5e5ce6; bottom: -20%; right: -10%; animation-delay: -5s; }
 .orb-3 { width: 45vw; height: 45vw; background: #bf5af2; top: 40%; left: 50%; animation-delay: -10s; }
@@ -60,7 +87,7 @@ body {
 }
 
 /* =========================================
-   FROSTED GLASSMORPHISM (Perfected Apple Style)
+   FROSTED GLASSMORPHISM
    ========================================= */
 .ios-glass {
     background: rgba(40, 40, 40, 0.35);
